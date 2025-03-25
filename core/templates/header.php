@@ -27,7 +27,7 @@ $navItems = [
 <body class="bg-background text-OnBackground flex flex-col min-h-screen max-h-screen">
 <header>
     <!-- Desktop Navigation -->
-    <nav class="hidden md:flex bg-primary text-OnPrimary justify-between items-center h-16 px-6  shadow-lg">
+    <nav class="hidden md:flex bg-primary text-OnPrimary justify-between items-center h-16 px-6 fixed left-0 right-0 top-0 shadow-lg z-10">
         <div class="flex flex-row items-center space-x-4">
             <a href="/" class="flex items-center space-x-2">
                 <img src="/assets/images/logo.jpg" alt="ECE" class="w-12 h-12 rounded-md shadow-md">
@@ -45,19 +45,21 @@ $navItems = [
                 </a>
             <?php endforeach; ?>
         </div>
+        
     </nav>
-    <div id="overflow" class="relative hidden">
-        <div class="absolute flex flex-col right-0 w-48 bg-surface shadow-lg overflow-hidden z-10">
-                <button id="toggleThemeDsktp" class="flex px-4 py-2 hover:bg-primary hover:text-OnPrimary transition-all duration-300">
-                    <span>Changer de thème</span>
-                </button>
-                <script>
-                    document.getElementById('toggleThemeDsktp').addEventListener('click', function() {
-                        document.body.classList.toggle('dark');
-                    });
-                </script>
-        </div>
-    </div>
+    
+    <div id="overflow" class="absolute hidden">
+            <div class="fixed top-16 flex flex-col right-0 w-48 bg-surface shadow-lg overflow-hidden z-10">
+                    <button id="toggleThemeDsktp" class="flex px-4 py-2 hover:bg-primary hover:text-OnPrimary transition-all duration-300">
+                        <span>Changer de thème</span>
+                    </button>
+                    <script>
+                        document.getElementById('toggleThemeDsktp').addEventListener('click', function() {
+                            document.body.classList.toggle('dark');
+                        });
+                    </script>
+            </div>
+        </div>div>
 
     <!-- Mobile Navigation -->
     <div class="md:hidden shadow-lg bg-primary text-OnPrimary">
@@ -75,4 +77,4 @@ $navItems = [
 
 </header>
 
-<main class="flex-grow p-6 flex">
+<main >

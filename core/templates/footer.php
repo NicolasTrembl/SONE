@@ -5,7 +5,7 @@
 
     
     <!-- Mobile Navigation -->
-    <div class="md:hidden shadow-lg bg-primary text-OnPrimary">
+    <div class="md:hidden shadow-lg bg-primary text-OnPrimary z-10">
         <!-- Overlay -->
         <div id="overlay" class="hidden fixed inset-0 bg- bg-opacity-50"></div>
         <!-- Sidebar -->
@@ -15,7 +15,7 @@
             </button>
             <nav class="mt-12 space-y-4 px-6">
                 <?php foreach ($navItems as $item) : ?>
-                    <a href="<?= $item['href'] ?>" class="flex items-center space-x-2  hover:text-gray-300 transition">
+                    <a href="?page=<?= $item['id'] ?>" class="flex items-center space-x-2 hover:text-gray-300 transition">
                         <i data-lucide="<?= $item['icon'] ?>"></i>
                         <span><?= $item['label'] ?></span>
                     </a>

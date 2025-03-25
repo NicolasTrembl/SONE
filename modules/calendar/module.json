@@ -1,0 +1,29 @@
+{
+    "name": "Calendrier",
+    "description": "Affiche le calendrier de l'utilisateur",
+    "icon": {
+        "type": "lucide",
+        "value": "calendar"
+    },
+    "version": "0.0.1",
+    "author": "Nicolas Tremblay",
+    "permissions": [
+        {
+            "type" : "password_and_username", 
+            "for": "Accèder (une seule fois) au lien du calendrier de l'utilisateur sur le site de l'ECE", 
+            "required": false
+        }
+    ],
+    "widgets": [
+        {
+            "foldername": "calendar",
+            "name": "Calendrier",
+            "description": "Affiche le calendrier de l'utilisateur",
+            "icon": {
+                "type": "lucide",
+                "value": "calendar"
+            },
+            "size": ">=(4x3)"
+        }
+    ]
+}

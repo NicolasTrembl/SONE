@@ -29,6 +29,9 @@ function initModuleCarousel(grades) {
                 <span class="text-lg font-bold text-gray-800">${semester.name}</span>
         `;
 
+
+        // NOT A REALLY RESPONSIVE DESIGN
+        // TODO : MAKE IT RESPONSIVE (using css)
         if (window.innerWidth <= 768) {
             let widgetSize = Math.min(window.innerWidth * 0.8, 150);
             console.log(widgetSize);
