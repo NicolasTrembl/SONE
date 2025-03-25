@@ -1,3 +1,3 @@
-$(function() {
-    alert("Site chargé !");
-});
+// $(function() {
+//     alert("Site chargé !");
+// });

@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Default Light Theme */
+
+:root {
+    --background-color: #FFFAFA;
+    --on-background: #353535;
+    --surface-color: #D9D9D9;
+    --on-surface: #353535;
+    --primary-color: #3C6E71;
+    --on-primary: #FFFAFA;
+    --secondary-color: #284B63;
+    --on-secondary: #FFFAFA;
+    --tertiary-color: #353535;
+    --on-tertiary: #FFFAFA;
+    --error-color: #B33951;
+    --on-error: #FFFAFA;
+}
+
+
+/* Default Dark Theme */
+
+.dark {
+    --background-color: #353535;
+    --on-background: #FFFAFA;
+    --surface-color: #4A4A4A;
+    --on-surface: #FFFAFA;
+    --primary-color: #3C6E71;
+    --on-primary: #FFFAFA;
+    --secondary-color: #284B63;
+    --on-secondary: #FFFAFA;
+    --tertiary-color: #D9D9D9;
+    --on-tertiary: #353535;
+    --error-color: #B33951;
+    --on-error: #FFFAFA;
+}
+
+/* For the swipper pagination */
+.swiper-pagination-bullet-active {
+    background: var(--primary-color) !important;
+}

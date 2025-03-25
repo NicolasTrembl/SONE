@@ -1,0 +1,50 @@
+{
+    "name": "Notes",
+    "description": "Affiche les notes de l'utilisateur",
+    "icon": {
+        "type": "lucide",
+        "value": "hash"
+    },
+    "version": "0.0.1",
+    "author": "Nicolas Tremblay",
+    "permissions": [
+        {
+            "type" : "password_and_username", 
+            "for": "Accèder aux notes de l'utilisateur sur le site de l'ECE", 
+            "required": true
+        }
+    ],
+    "widgets": [
+        {
+            "foldername": "average",
+            "name": "Moyenne Générale",
+            "description": "Affiche la moyenne générale de l'utilisateur",
+            "icon": {
+                "type": "lucide",
+                "value": "hash"
+            },
+            "size": ">=(1x2)"
+        },
+        {
+            "foldername": "split_average",
+            "name": "Moyennes par module",
+            "description": "Affiche la moyenne des modules de l'utilisateur",
+            "icon": {
+                "type": "lucide",
+                "value": "hash"
+            },
+            "size": ">=(4x3)"
+        },
+        {
+            "foldername": "radar",
+            "name": "Graphique Radar des matières par semestre",
+            "description": "Affiche un graphique radar des matières par semestre",
+            "icon": {
+                "type": "lucide",
+                "value": "hash"
+            },
+            "size": ">=(2x2)"
+        }
+    ]
+    
+}

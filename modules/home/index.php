@@ -1,14 +1,29 @@
-<div class="p-6 text-center">
-    <h1 class="text-4xl font-bold text-blue-600">Bienvenue !</h1>
-    <p class="mt-2 text-gray-700">Ceci est la page d'accueil de ton site.</p>
+<!-- Empty, filled by JS -->
+<script>
 
-    <div class="mt-4 flex justify-center space-x-4">
-        <a href="?page=emploi_du_temps" class="px-4 py-2 bg-blue-500 text-white rounded">Voir mon emploi du temps</a>
-        <a href="?page=notes" class="px-4 py-2 bg-green-500 text-white rounded">Voir mes notes</a>
-    </div>
-</div>
-<div class="text-center p-6">
-    <h1 class="text-4xl font-bold text-blue-600">Bienvenue sur mon site !</h1>
-    <p class="text-gray-700 mt-2">Ce site utilise Tailwind CSS.</p>
-</div>
+$(document).ready(function () {
+    let layout = null// localStorage.getItem("userLayout");
 
+    if (!layout) {
+        layout = JSON.stringify([
+            { classes: "overflow-hidden rounded-lg md:col-span-4 md:row-span-3 bg-surface", content: "grades/widgets/split_average" },
+            { classes: "overflow-hidden rounded-lg md:col-span-2 md:row-span-3 md:col-start-5 md:row-start-3 bg-surface", content: "grades/widgets/radar" },
+            { classes: "overflow-hidden rounded-lg md:col-span-3 md:row-span-2 md:col-start-2 md:row-start-4 bg-surface", content: "" },
+            { classes: "overflow-hidden rounded-lg md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-1 bg-surface", content: "" },
+            { classes: "overflow-hidden rounded-lg md:row-span-2 md:col-start-1 md:row-start-4 bg-surface", content: "grades/widgets/average" }
+        ]);
+        localStorage.setItem("userLayout", layout);
+    }
+
+    layout = JSON.parse(layout);
+
+
+
+    $.post("core/get_layout.php", { layout: JSON.stringify(layout) }, function (html) {
+        $("main").html(html);
+        $("main").removeClass().addClass("flex-grow md:grid md:grid-cols-6 md:grid-rows-5 md:gap-4 flex flex-col p-6 gap-2 sd:p-2");    
+    });
+});
+
+
+</script>
