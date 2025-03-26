@@ -1,11 +1,23 @@
 function logAndFetchAll(email, password) {
+
+    if (!email || !password) {
+        email = localStorage.getItem("email");
+        password = localStorage.getItem("password");
+        if (!email || !password || email === "" || password === "" || email === "undefined" || password === "undefined") {
+            console.error("Pas d'email ou de mot de passe enregistré");
+            return;
+        }
+    }
+
     const gradeLoaded = new Event("gradesLoaded");
 
-    getToken({ email, password, remember: true }).then(token => {
+    getToken({ email, password, remember: false }).then(token => {
         if (!token) {
             console.error("Erreur d'authentification");
             return;
         }
+
+        getCalendarLink(token);
 
         getGrades(token, grades => {
             if (!grades) {
@@ -133,6 +145,3 @@ function calculateSemesterAverage(sem) {
 }
 
 
-
-writeAllWithCached();
-logAndFetchAll("nicolas.tremblay@edu.ece.fr", "aAuD47{jz");

@@ -1,8 +1,8 @@
 <?php
 $navItems = [
-    ["id" => "courses", "icon" => "book-marked", "label" => "Cours"],
-    ["id" => "calendar", "icon" => "calendar-days", "label" => "Agenda"],
-    ["id" => "grades", "icon" => "hash", "label" => "Notes"],
+    // ["id" => "courses", "icon" => "book-marked", "label" => "Cours"],
+    // ["id" => "calendar", "icon" => "calendar-days", "label" => "Agenda"],
+    // ["id" => "grades", "icon" => "hash", "label" => "Notes"],
     ["id" => "tools", "icon" => "layout-grid", "label" => "Outils"],
     ["id" => "account", "icon" => "circle-user-round", "label" => "Compte"],
     ["id" => "settings", "icon" => "settings", "label" => "Réglages"],
@@ -73,8 +73,6 @@ $navItems = [
             </button>
         </div>
     </div>
-
-
 </header>
 
-<main >
+<main class=" md:pt-16 flex-grow">

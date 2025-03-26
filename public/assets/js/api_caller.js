@@ -9,15 +9,8 @@ const endpoint = "http://localhost:3000";
 async function getToken(data, callback = (token) => {}) {
     const { email, password, remember } = data;
 
-    let encrypted;
+    let encrypted = password;
     
-    if (remember && localStorage.getItem("password")) {
-        encrypted = localStorage.getItem("password");
-    } else {
-        
-        encrypted = password;
-    }
-
     if (remember) {
         localStorage.setItem("email", email);
         localStorage.setItem("password", encrypted);
@@ -27,10 +20,11 @@ async function getToken(data, callback = (token) => {}) {
         const response = await fetch(`${endpoint}/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, encryptedPassword: encrypted }),
+            body: JSON.stringify({ email: email, encryptedPassword: encrypted }),
         });
 
         const json = await response.json();
+
         if (response.ok) {
             const token = json["token"];
             localStorage.setItem("token", token);            
@@ -135,6 +129,25 @@ async function getCalendar(callback = (calendar) => {}) {
     }
 }
 
+async function getCalendarLink(token, callback = (link) => {}) {
+    try {
+        const response = await fetch(`${endpoint}/calendar_link`, {
+            method: "GET",
+            headers: { 
+                "Content-Type": "application/json", "Authorization": `Bearer ${token}`
+            },
+        });
+        if (!response.ok) throw new Error("Erreur API calendrier");
+
+        const text = await response.json();
+        callback(text);
+        return text;
+    } catch (error) {
+        console.error("Erreur lors de la récupération du lien du calendrier :", error);
+        return false;
+    }
+};
+
 /**
  * Fonction générique pour récupérer des données avec un token
  * @param {string} url - URL de l'API
@@ -161,4 +174,5 @@ async function fetchData(url, token, callback) {
         return null;
     }
 }
+
 
