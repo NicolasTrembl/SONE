@@ -39,7 +39,7 @@
             reminders.forEach((reminder, index) => {
                 const reminderItem = $('<div></div>')
                     .addClass('cursor-pointer mb-2 p-2 rounded')
-                    .text(`${reminder.name} - ${reminder.date}`)
+                    .text(`${reminder.name}`)
                     .on('click', function() {
                         selectedReminder.name.text(reminder.name);
                         selectedReminder.date.text(reminder.date);

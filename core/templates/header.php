@@ -59,7 +59,7 @@ $navItems = [
                         });
                     </script>
             </div>
-        </div>div>
+        </div>
 
     <!-- Mobile Navigation -->
     <div class="md:hidden shadow-lg bg-primary text-OnPrimary">

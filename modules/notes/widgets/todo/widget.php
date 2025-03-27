@@ -8,6 +8,12 @@
             const todos = JSON.parse(localStorage.getItem('todos')) || [];
             const sortedTodos = todos.sort((a, b) => b.pinned - a.pinned || a.isDone - b.isDone);
             $('#todo-list').empty();
+
+            if (sortedTodos.length === 0) {
+                $('#todo-list').append('<li class="text-center text-gray-500">Pas de tache</li>');
+                return;
+            }
+
             sortedTodos.forEach(todo => {
                 const todoItem = $(`
                     <li class="flex items-center justify-between p-2 border-b">
